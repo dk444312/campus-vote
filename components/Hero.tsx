@@ -1,10 +1,36 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 
 const Hero: React.FC = () => {
-  // DEADLINE: TODAY @ 12:09 PM
-  const votingEndTime = new Date('2025-11-07T21:00:00').getTime();
+  // DEADLINE: TODAY @ 12:09 PM CAT (Malawi) → 2025-11-07 12:09:00
+  const votingEndTime = new Date('2025-11-07T12:09:00').getTime();
 
-  const now = Date.now();
+  const [now, setNow] = useState(Date.now());
+  const [countdown, setCountdown] = useState('');
+
+  // Update every second
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setNow(Date.now());
+    }, 1000);
+
+    return () => clearInterval(timer); // cleanup
+  }, []);
+
+  // Recalculate countdown whenever `now` changes
+  useEffect(() => {
+    const diff = votingEndTime - now;
+
+    if (diff <= 0) {
+      setCountdown('0m');
+      return;
+    }
+
+    const hours = Math.floor(diff / (1000 * 60 * 60));
+    const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+
+    setCountdown(hours > 0 ? `${hours}h ${minutes}m` : `${minutes}m`);
+  }, [now, votingEndTime]);
+
   const isVotingOpen = now < votingEndTime;
 
   const buttonConfig = isVotingOpen
@@ -22,15 +48,6 @@ const Hero: React.FC = () => {
         hoverBg: 'hover:bg-blue-700',
         textColor: 'text-white',
       };
-
-  // Live countdown (hours & minutes)
-  const getCountdown = () => {
-    const diff = votingEndTime - now;
-    if (diff <= 0) return '0m';
-    const hours = Math.floor(diff / (1000 * 60 * 60));
-    const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-    return hours > 0 ? `${hours}h ${minutes}m` : `${minutes}m`;
-  };
 
   return (
     <section className="bg-white">
@@ -61,7 +78,7 @@ const Hero: React.FC = () => {
           {/* LIVE COUNTDOWN */}
           {isVotingOpen && (
             <p className="mt-6 text-sm font-medium text-red-600 animate-pulse">
-              Voting closes in <span className="font-bold">{getCountdown()}</span>
+              Voting closes in <span className="font-bold">{countdown}</span>
             </p>
           )}
         </div>
