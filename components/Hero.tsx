@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 
 const Hero: React.FC = () => {
   // DEADLINE: TODAY @ 12:09 PM CAT (Malawi) → 2025-11-07 12:09:00
-  const votingEndTime = new Date('2025-11-07T12:09:00').getTime();
+  const votingEndTime = new Date('2025-11-07T20:09:00').getTime();
 
   const [now, setNow] = useState(Date.now());
   const [countdown, setCountdown] = useState('');
