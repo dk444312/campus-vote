@@ -53,11 +53,11 @@ const Hero: React.FC = () => {
     <section className="bg-white">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-32">
         <div className="text-center">
-          {/* Awards Image */}
+          {/* Awards Image - Now using a live link */}
           <div className="mb-8">
             <img
               src="[attachment_0](attachment)"
-              alt="Awards Ceremony"
+              alt="Gala Dinner Awards Stage"
               className="mx-auto rounded-lg shadow-lg max-w-full h-auto md:max-w-xl lg:max-w-2xl"
             />
           </div>
