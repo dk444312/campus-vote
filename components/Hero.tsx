@@ -2,7 +2,7 @@ import React from 'react';
 
 const Hero: React.FC = () => {
   // DEADLINE: TODAY @ 12:09 PM
-  const votingEndTime = new Date('2025-11-06T20:00:00').getTime();
+  const votingEndTime = new Date('2025-11-07T20:00:00').getTime();
 
   const now = Date.now();
   const isVotingOpen = now < votingEndTime;
