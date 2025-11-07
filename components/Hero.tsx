@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 
 const Hero: React.FC = () => {
-  // DEADLINE: TODAY @ 12:09 PM CAT (Malawi) → 2025-11-07 12:09:00
-  const votingEndTime = new Date('2025-11-07T20:09:00').getTime();
+  // DEADLINE: TOMORROW @ 9:00 PM CAT (Malawi) → 2025-11-08 21:00:00
+  const votingEndTime = new Date('2025-11-08T21:00:00').getTime();
 
   const [now, setNow] = useState(Date.now());
   const [countdown, setCountdown] = useState('');
@@ -54,7 +54,7 @@ const Hero: React.FC = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-32">
         <div className="text-center">
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-extrabold tracking-tighter text-black leading-tight">
-            Your Voice, Your Vote.
+            2025 Finale Dinner Awards Voting Now Open. Vote Now!
             <br />
             <span className="text-gray-600">Shape Your Campus Future.</span>
           </h1>
