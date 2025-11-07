@@ -53,15 +53,7 @@ const Hero: React.FC = () => {
     <section className="bg-white">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-32">
         <div className="text-center">
-          {/* Awards Image - Now using a live link */}
-          <div className="mb-8">
-            <img
-              src="[attachment_0](attachment)"
-              alt="Gala Dinner Awards Stage"
-              className="mx-auto rounded-lg shadow-lg max-w-full h-auto md:max-w-xl lg:max-w-2xl"
-            />
-          </div>
-
+          
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-extrabold tracking-tighter text-black leading-tight">
             2025 Finale Dinner Awards Voting Now Open. Vote Now!
             <br />
