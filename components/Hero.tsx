@@ -55,7 +55,7 @@ const Hero: React.FC = () => {
         <div className="text-center">
           
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-extrabold tracking-tighter text-black leading-tight">
-            2025 Finale Dinner Awards Voting Now Open. Vote Now!
+            2025 Finale Dinner Awards Voting Now Closed. Thank you for voting!
             <br />
             <span className="text-gray-600">Shape Your Campus Future.</span>
           </h1>
