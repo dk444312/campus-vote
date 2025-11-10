@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 
 const Hero: React.FC = () => {
-  // Voting START: November 21, 2025 @ 9:00 AM CAT (UTC+2)
+  // Voting START: November 21, 2025 @ 6:00 AM CAT (UTC+2)
   const votingStartTime = new Date('2025-11-21T06:00:00+02:00').getTime();
 
   const [now, setNow] = useState(Date.now());
@@ -41,7 +41,7 @@ const Hero: React.FC = () => {
 
   return (
     <>
-      {/* ====== COUNTDOWN MODE (Before Nov 21) ====== */}
+      {/* ====== COUNTDOWN MODE (Before Nov 21, 6:00 AM CAT) ====== */}
       {isCountdownMode && (
         <div className="fixed inset-0 bg-black flex items-center justify-center z-50">
           <div className="text-center space-y-8 p-8">
@@ -69,7 +69,7 @@ const Hero: React.FC = () => {
         </div>
       )}
 
-      {/* ====== FULL HERO MODE (After Nov 21) ====== */}
+      {/* ====== FULL HERO MODE (After Nov 21, 6:00 AM CAT) ====== */}
       {!isCountdownMode && (
         <section className="relative min-h-screen bg-gradient-to-br from-blue-900 via-blue-700 to-indigo-900 overflow-hidden">
           {/* Background Glows */}
