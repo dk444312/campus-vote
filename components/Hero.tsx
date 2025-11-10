@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 
 const Hero: React.FC = () => {
   // Voting START: November 21, 2025 @ 9:00 AM CAT (UTC+2)
-  const votingStartTime = new Date('2025-11-11T01:46:00+02:00').getTime();
+  const votingStartTime = new Date('2025-11-11T01:48:00+02:00').getTime();
 
   const [now, setNow] = useState(Date.now());
   const [timeLeft, setTimeLeft] = useState({
