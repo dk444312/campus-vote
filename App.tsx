@@ -9,7 +9,7 @@ const App: React.FC = () => {
   const [isCountdownActive, setIsCountdownActive] = useState(true);
 
   // Voting START: November 21, 2025 @ 9:00 AM CAT (UTC+2)
-  const votingStartTime = new Date('2025-11-11T01:48:00+02:00').getTime();
+  const votingStartTime = new Date('2025-11-21T06:00:00+02:00').getTime();
 
   useEffect(() => {
     const checkTime = () => {
