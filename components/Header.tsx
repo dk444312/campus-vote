@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
-import { MenuIcon, XIcon } from '../icons/NavIcons';   // This is now correct
-import cunimaLogo from '../image.png';                // This is also correct
+import cunimaLogo from '../image.png';   // This one works
+
+// REMOVED THE BAD IMPORT ENTIRELY
+// import { MenuIcon, XIcon } from '../icons/NavIcons';  ← This file/folder doesn't exist → build fails
 
 const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -42,13 +44,23 @@ const Header: React.FC = () => {
             ))}
           </nav>
 
-          {/* Mobile Menu Button */}
+          {/* Mobile Menu Button – Pure SVG (no import needed) */}
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             className="md:hidden text-white p-2 hover:bg-white/20 rounded-md transition-all"
             aria-label="Toggle menu"
           >
-            {isMenuOpen ? <XIcon className="h-7 w-7" /> : <MenuIcon className="h-7 w-7" />}
+            {isMenuOpen ? (
+              // X Icon
+              <svg className="h-7 w-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            ) : (
+              // Hamburger Icon
+              <svg className="h-7 w-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+              </svg>
+            )}
           </button>
         </div>
       </div>
