@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { MenuIcon, XIcon } from './icons/NavIcons';   // This now works 100%
-import cunimaLogo from '../images.png';               // Your actual logo filename
+import { MenuIcon, XIcon } from './icons/NavIcons';     // correct – same folder level
+import cunimaLogo from '../src/images.png';            // correct – go up one, then into src/
 
 const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -46,7 +46,6 @@ const Header: React.FC = () => {
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             className="md:hidden p-2 text-white hover:bg-white/20 rounded-md transition-all"
-            aria-label="Toggle menu"
           >
             {isMenuOpen ? <XIcon className="h-7 w-7" /> : <MenuIcon className="h-7 w-7" />}
           </button>
