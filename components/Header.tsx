@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { MenuIcon, XIcon } from '../src/icons/NavIcons'; // adjust if icons are elsewhere
-import cunimaLogo from '../src/image.png';               // THIS IS THE CORRECT PATH
+import cunimaLogo from '../Src/image.png';               // THIS IS THE CORRECT PATH
 
 const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
