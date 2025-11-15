@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { MenuIcon, XIcon } from '../src/icons/NavIcons'; // adjust if icons are elsewhere
-import cunimaLogo from '../src/image.png';               // THIS IS THE CORRECT PATH
+import { MenuIcon, XIcon } from '../icons/NavIcons';   // This is now correct
+import cunimaLogo from '../image.png';                // This is also correct
 
 const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -16,7 +16,7 @@ const Header: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
 
-          {/* Catholic University of Malawi Logo */}
+          {/* CUNIMA Logo */}
           <div className="flex-shrink-0">
             <a href="/">
               <img
@@ -45,7 +45,8 @@ const Header: React.FC = () => {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="md:hidden text-white p-2 hover:bg-white/20 rounded-md"
+            className="md:hidden text-white p-2 hover:bg-white/20 rounded-md transition-all"
+            aria-label="Toggle menu"
           >
             {isMenuOpen ? <XIcon className="h-7 w-7" /> : <MenuIcon className="h-7 w-7" />}
           </button>
@@ -62,7 +63,7 @@ const Header: React.FC = () => {
                 href={link.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="block text-white font-medium hover:bg-white/20 px-4 py-3 rounded-md"
+                className="block text-white font-medium hover:bg-white/20 px-4 py-3 rounded-md transition-all"
                 onClick={() => setIsMenuOpen(false)}
               >
                 {link.name}
