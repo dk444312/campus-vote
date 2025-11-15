@@ -1,8 +1,6 @@
 import React, { useState } from 'react';
-import cunimaLogo from '../image.png';   // This one works
-
-// REMOVED THE BAD IMPORT ENTIRELY
-// import { MenuIcon, XIcon } from '../icons/NavIcons';  ← This file/folder doesn't exist → build fails
+import { MenuIcon, XIcon } from './icons/NavIcons';   // This now works 100%
+import cunimaLogo from '../images.png';               // Your actual logo filename
 
 const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -37,30 +35,20 @@ const Header: React.FC = () => {
                 href={link.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-white font-medium hover:bg-white/20 px-4 py-2 rounded-md transition-all duration-200"
+                className="text-white font-medium hover:bg-white/20 px-4 py-2 rounded-md transition-all"
               >
                 {link.name}
               </a>
             ))}
           </nav>
 
-          {/* Mobile Menu Button – Pure SVG (no import needed) */}
+          {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="md:hidden text-white p-2 hover:bg-white/20 rounded-md transition-all"
+            className="md:hidden p-2 text-white hover:bg-white/20 rounded-md transition-all"
             aria-label="Toggle menu"
           >
-            {isMenuOpen ? (
-              // X Icon
-              <svg className="h-7 w-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-              </svg>
-            ) : (
-              // Hamburger Icon
-              <svg className="h-7 w-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-              </svg>
-            )}
+            {isMenuOpen ? <XIcon className="h-7 w-7" /> : <MenuIcon className="h-7 w-7" />}
           </button>
         </div>
       </div>
@@ -75,7 +63,7 @@ const Header: React.FC = () => {
                 href={link.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="block text-white font-medium hover:bg-white/20 px-4 py-3 rounded-md transition-all"
+                className="block px-4 py-3 text-white font-medium hover:bg-white/20 rounded-md transition-all"
                 onClick={() => setIsMenuOpen(false)}
               >
                 {link.name}
